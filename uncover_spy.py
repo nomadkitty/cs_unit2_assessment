@@ -67,11 +67,27 @@ def uncover_spy(n, trust):
             trusted_index[trust[i][1]] += 1
         else:
             trusted_index[trust[i][1]] = 1
+    print(trusted_index)
+    print(not_trust)
     for key, value in trusted_index.items():
         if value == n-1:
             spy = key
-            for val in not_trust:
-                if spy not in not_trust:
-                    return spy
-    else:
-        return -1
+    for val in not_trust:
+        if spy not in not_trust:
+            return spy
+    return -1
+
+
+'''
+Time complexity: O(n+n+n) ~ O(n)
+Space complexity: O(n+n+1) ~ O(n)
+'''
+
+n1 = 3
+trust1 = [[1, 3], [2, 3], [3, 1]]
+
+n2 = 4
+trust2 = [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]
+
+print(uncover_spy(n1, trust1))
+print(uncover_spy(n2, trust2))

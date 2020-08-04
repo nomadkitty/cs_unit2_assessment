@@ -38,7 +38,18 @@ def first_not_repeating_character(s):
         else:
             dict[letter] = 1
             letter_order.append(letter)
+    print(dict)
+    print(letter_order)
     for letter in letter_order:
         if dict[letter] == 1:
             return letter
     return "_"
+
+
+'''
+Time complexity: O(n+n) ~ O(n)
+Space complexity: O(n)
+'''
+
+print(first_not_repeating_character("abacabad"))
+print(first_not_repeating_character("abacabaabacaba"))

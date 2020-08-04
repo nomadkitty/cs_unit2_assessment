@@ -54,3 +54,10 @@ def remove_kth_from_end(head, k):
         prev.next = pointer.next
         pointer.next = None
         return head
+
+
+'''
+Time complexity: O(n+n) ~ O(n)
+Space complexity: O(1)
+'''
+# Diagram: https://app.diagrams.net/#W8d2d92752b594726%2F8D2D92752B594726!2884
